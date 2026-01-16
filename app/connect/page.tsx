@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion,type Variants } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 
 
@@ -30,6 +32,7 @@ const item:Variants = {
 };
 
 export default function LetsConnectPage() {
+    const [open, setOpen] = useState(false);
   return (
     <section className="relative bg-gradient-to-br from-slate-100 via-slate-50 to-white px-6 py-24 overflow-hidden">
 
@@ -98,16 +101,19 @@ export default function LetsConnectPage() {
 
             {/* CTA */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
+               <Link href="/contact" onClick={() => setOpen(false)}>
               <Button className="rounded-xl px-8 py-6 text-lg bg-slate-900 text-white hover:bg-slate-800 transition">
                 Send a Message
               </Button>
-
+</Link>
+               <Link href="/contact" onClick={() => setOpen(false)}>
               <Button
                 variant="outline"
                 className="rounded-xl px-8 py-6 text-lg border-slate-300 text-slate-700 hover:bg-slate-100 transition"
               >
                 Book a Conversation
               </Button>
+              </Link>
             </div>
           </motion.div>
 

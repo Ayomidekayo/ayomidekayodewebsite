@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import Link from "next/link";
+import { useState } from "react";
 
 export function SpeakingInvitationCTA() {
+ const [open, setOpen] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -33,7 +36,7 @@ export function SpeakingInvitationCTA() {
           business or corporate gathering, or community forum, Kayode brings
           clarity, depth, and transformation to every platform.
         </p>
-
+     <Link href="/contact" onClick={() => setOpen(false)}>
         <Button
           className="
             w-full sm:w-auto
@@ -47,6 +50,7 @@ export function SpeakingInvitationCTA() {
         >
           Book a Speaking Engagement
         </Button>
+        </Link>
       </div>
     </motion.div>
   );
