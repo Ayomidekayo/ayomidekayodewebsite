@@ -68,7 +68,7 @@ export default function ContactPage() {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-slate-900/10 to-slate-400/10 blur-xl" />
               <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg">
                 <Image
-                  src="/asset/ayo.jpg"
+                  src="/asset/Ayo.jpg"
                   alt="Kayode Ayomide – Speaker & Personal Development Advocate"
                   width={500}
                   height={600}
