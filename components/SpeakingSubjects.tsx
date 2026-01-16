@@ -1,9 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 
-const container = {
+/* ---------------- Animations ---------------- */
+
+const container: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -13,17 +15,22 @@ const container = {
   },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 24 },
+const item: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1],
+      ease: "easeOut", // ✅ FIXED
     },
   },
 };
+
+/* ---------------- Content ---------------- */
 
 const topics = [
   {
@@ -52,6 +59,8 @@ const topics = [
   },
 ];
 
+/* ---------------- Component ---------------- */
+
 export function SpeakingSubjects() {
   return (
     <motion.section
@@ -78,6 +87,7 @@ export function SpeakingSubjects() {
                 <h4 className="text-lg font-semibold text-slate-900 mb-3">
                   {topic.title}
                 </h4>
+
                 <p className="text-slate-600 leading-relaxed">
                   {topic.desc}
                 </p>
