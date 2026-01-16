@@ -33,7 +33,7 @@ const socials = [
   {
     name: "Email",
     icon: Mail,
-    href: "kayodeayomide677@gmail.com",
+    href: "mailto:kayodeayomide677@gmail.com",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function SocialLinks() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="flex flex-wrap items-center gap-4"
+      className="flex flex-wrap justify-center md:justify-start gap-3"
     >
       {socials.map(({ name, icon: Icon, href }) => (
         <motion.a
@@ -53,20 +53,27 @@ export default function SocialLinks() {
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ y: -4 }}
-          transition={{ type: "spring", stiffness: 300, damping: 18 }}
-          className="group flex items-center gap-3 rounded-full border border-slate-300 
-                     bg-white px-5 py-3 shadow-sm transition
-                     hover:border-slate-400 hover:shadow-md"
+          whileTap={{ scale: 0.96 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="
+            group flex items-center gap-3
+            rounded-full border border-slate-300
+            bg-white px-4 py-3
+            shadow-sm transition
+            hover:border-slate-400 hover:shadow-md
+          "
         >
           <span
-            className="flex h-9 w-9 items-center justify-center rounded-full 
-                       bg-slate-100 text-slate-700 
-                       group-hover:bg-slate-200"
+            className="
+              flex h-9 w-9 items-center justify-center
+              rounded-full bg-slate-100 text-slate-700
+              group-hover:bg-slate-200
+            "
           >
             <Icon size={18} />
           </span>
 
-          <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900">
+          <span className="text-sm font-medium text-slate-700 whitespace-nowrap">
             {name}
           </span>
         </motion.a>
